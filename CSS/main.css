@@ -1,0 +1,332 @@
+html {
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+}
+.wrapper {
+  font-size: 1.7em;
+  font-family: "Roboto";
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7em 9.3em;
+  background-color: white;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures the header stays above other content */
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 2em;
+  margin: 0;
+  align-items: center;
+  padding: 0;
+}
+header nav ul li {
+  position: relative;
+}
+.border::after {
+  position: absolute;
+  content: "";
+  right: -2rem;
+  background-color: black;
+  bottom: -0.2rem;
+  width: 0.5px;
+  height: 120%;
+}
+.border.ho::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%; /* Remaining width */
+  height: 2px; /* Thickness of the border */
+  background-color: rgb(254, 134, 34); /* Border color */
+  transition: width 0.3s;
+}
+.border.active {
+  color: rgb(0, 131, 236);
+}
+.border.active::before {
+  position: absolute;
+  content: "";
+  right: -2rem;
+  background-color: black;
+  bottom: -0.2rem;
+  width: 0.5px;
+  height: 120%;
+}
+
+.border.active::after {
+  position: absolute;
+  content: "";
+  left: -10%;
+  background-color: rgb(0, 131, 236);
+  bottom: -30%;
+  width: 120%;
+  height: 2px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-family: "Roboto Slab";
+  font-weight: 400;
+}
+header nav ul li a {
+  align-items: center;
+}
+.bg {
+  display: flex;
+  background-color: rgb(254, 134, 34);
+  align-items: center;
+  height: 2.5em;
+  width: 4.5em;
+  justify-content: center;
+  color: white;
+}
+.home_page {
+  display: flex;
+  justify-content: center;
+  height: 31em;
+  align-items: center;
+}
+.parallax {
+  height: 100%; /* Full height */
+  background-image: url("https://rami-gomaa.de/wp-content/uploads/2021/09/rami-gomaa-banner-mainboard.jpg"); /* Replace with your image */
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+.home_page h1 {
+  align-content: center;
+  margin: 12rem auto auto auto;
+  padding: 3.2rem 0;
+  width: 17em;
+  height: 5em;
+  background-color: rgba(250, 250, 250, 0.8);
+  text-align: center;
+  color: rgb(0, 131, 236);
+  font-weight: normal;
+  font-family: "Roboto Slab";
+  position: relative;
+}
+.home_page h1::after {
+  position: absolute;
+  content: "";
+  left: -1rem;
+  background-color: rgb(254, 134, 34);
+  bottom: 0;
+  width: 1rem;
+  height: 100%;
+}
+.content {
+  background: url(https://rami-gomaa.de/wp-content/uploads/2022/09/rami_gomaa_background-1.jpg);
+}
+.first_row {
+  padding: 3em 11em;
+  display: flex;
+  justify-content: space-between;
+}
+.card {
+  width: 38rem;
+  height: 54.8rem;
+  padding: 3.2rem;
+  box-sizing: border-box;
+  line-height: 1.8;
+  background-color: rgba(250, 250, 250, 0.8);
+  transition: all 0.3s;
+}
+.card::before {
+  position: absolute;
+  content: "";
+  left: -1rem;
+  background-color: rgb(254, 134, 34);
+  top: 0;
+  width: 1rem;
+  height: 0;
+  transition: all 0.3s;
+}
+
+h2 {
+  color: rgb(0, 131, 236);
+  font-size: 3.2rem;
+  margin: 2.4rem 0 1.6rem;
+  font-family: "Roboto Slab";
+  font-weight: normal;
+}
+p {
+  font-size: 2rem;
+  margin: 0 0 1.6rem;
+}
+.card.right {
+  display: flex;
+  width: 66.5rem;
+}
+.text {
+  width: 38.7rem;
+  align-content: center;
+}
+.first_row .card.right {
+  justify-content: space-between;
+}
+.text a {
+  text-decoration: none;
+  color: rgb(254, 134, 34);
+  font-family: "Roboto Slab";
+  font-size: 2rem;
+  position: relative;
+}
+.text a::after {
+  content: "";
+  background-color: rgb(254, 134, 34);
+  height: 1rem;
+  bottom: -0.5rem;
+  left: -1rem;
+  width: 2px;
+  position: absolute;
+}
+.text a::before {
+  content: "";
+  background-color: rgb(254, 134, 34);
+  height: 2.5px;
+  bottom: -0.5rem;
+  left: -1rem;
+  width: 1rem;
+  position: absolute;
+}
+.photo {
+  align-content: center;
+}
+.second_row {
+  display: flex;
+  justify-content: space-between;
+  padding: 3rem 18.7rem;
+  align-items: center;
+}
+.second_row .card.left {
+  display: block;
+  width: 66.5rem;
+  height: 30.8rem;
+}
+.second_row .card.right {
+  width: 38rem;
+  height: 30.1rem;
+  display: block;
+  background-color: rgb(0, 131, 236);
+}
+
+.second_row .card.right h2 {
+  text-align: center;
+  color: white;
+}
+.second_row .card.right p {
+  color: white;
+  text-align: center;
+}
+.contact {
+  display: flex;
+  justify-content: center;
+}
+.contact a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(254, 134, 34);
+  color: white;
+  text-decoration: none;
+  width: 11.7rem;
+  height: 5.1rem;
+}
+.third_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 11.5rem;
+  margin: 8rem 61.5rem;
+  background-color: rgb(0, 131, 236);
+}
+.third_row a {
+  display: flex;
+  align-items: center;
+  background-color: rgb(254, 134, 34);
+  height: 5.1rem;
+  width: 15.4rem;
+  font-family: "Roboto Slab";
+  font-size: 2.4rem;
+  justify-content: center;
+  text-decoration: none;
+  color: white;
+}
+.lasr_row {
+  background-color: rgb(242, 242, 242);
+  height: 10.3rem;
+  padding: 3.2rem 17rem;
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+}
+.bottom {
+  display: flex;
+  justify-content: end;
+}
+.bottom a {
+  text-decoration: none;
+  color: rgb(254, 134, 34);
+}
+.footer {
+  display: flex;
+  background-color: rgb(49, 49, 49);
+  height: 7.8rem;
+  justify-content: space-between;
+  padding: 0 17rem;
+}
+.footer p {
+  color: #f2f2f2;
+}
+
+.footer nav {
+  display: flex;
+  align-items: center;
+}
+.footer nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  gap: 2.5rem;
+}
+.footer nav ul li {
+  display: flex;
+  align-items: center;
+}
+.footer nav ul li a {
+  text-decoration: none;
+  color: rgb(177, 177, 177);
+}
+.footer p {
+  display: flex;
+  margin: 0;
+  align-items: center;
+}
+.border.ho:hover:before {
+  width: 100%;
+}
+.card:hover {
+  transform: scale(1.1); /* Grows the box */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+.card:hover:before {
+  height: 100%;
+}
+.text a:hover:after {
+  height: 100%;
+}
+.text a:hover:before {
+  width: 100%;
+}
