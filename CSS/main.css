@@ -253,7 +253,11 @@ p {
   margin: 0;
   content: "+";
   right: 0;
+<<<<<<< HEAD
   top: 0;
+=======
+  bottom: 0;
+>>>>>>> f243db6b5781e97133fc6db0c60e0f6aeb8b5c4f
   font-size: 3rem;
   line-height: normal;
 }
