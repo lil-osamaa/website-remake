@@ -32,7 +32,7 @@ header nav ul {
 header nav ul li {
   position: relative;
 }
-.border::after {
+.need::after {
   position: absolute;
   content: "";
   right: -2rem;
@@ -353,11 +353,23 @@ p {
 .footer nav ul li {
   display: flex;
   align-items: center;
+  position: relative;
+}
+.footer .needed::after {
+  position: absolute;
+  content: "";
+  right: -1.25rem;
+  background-color: black;
+  bottom: -0.2rem;
+  width: 0.5px;
+  height: 120%;
 }
 .footer nav ul li a {
   text-decoration: none;
   color: rgb(177, 177, 177);
+  transition: all 0.3s;
 }
+
 .footer p {
   display: flex;
   margin: 0;
@@ -404,4 +416,7 @@ p {
 }
 .at:hover {
   transform: scale(1.2);
+}
+.footer nav ul li a:hover {
+  color: rgb(254, 134, 34);
 }
