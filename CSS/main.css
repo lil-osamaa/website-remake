@@ -42,6 +42,9 @@ header nav ul li {
   width: 0.5px;
   height: 120%;
 }
+.border.ho {
+  transition: all 0.3s;
+}
 .border.ho::before {
   content: "";
   position: absolute;
@@ -237,6 +240,22 @@ p {
   display: block;
   width: 66.5rem;
   height: 30.8rem;
+  padding-top: 4.1rem;
+}
+.second_row .card.left p {
+  color: rgb(0, 131, 236);
+  font-family: "Roboto Slab";
+  position: relative;
+}
+.second_row .card.left p::after {
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  content: "+";
+  right: 0;
+  top: 0;
+  font-size: 3rem;
+  line-height: normal;
 }
 .second_row .card.right {
   width: 38rem;
@@ -382,6 +401,9 @@ p {
 }
 .border.ho:hover:before {
   width: 100%;
+}
+.border.ho:hover {
+  color: rgb(254, 134, 34);
 }
 .card:hover {
   transform: scale(1.1); /* Grows the box */
