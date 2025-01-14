@@ -11,15 +11,17 @@ body {
   background: url(https://rami-gomaa.de/wp-content/uploads/2022/09/rami_gomaa_background-1.jpg);
 }
 header {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.7em 19em;
+  padding: 0.7em 0;
   background-color: white;
-  align-items: center;
   position: sticky;
   top: 0;
   z-index: 1000; /* Ensures the header stays above other content */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+header .content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header nav ul {
@@ -95,6 +97,7 @@ header nav ul li a {
   justify-content: center;
   height: 55em;
   align-items: center;
+  position: relative;
 }
 .parallax {
   height: 100%; /* Full height */
@@ -131,12 +134,17 @@ header nav ul li a {
   width: 1em;
   height: 100%;
 }
+.content {
+  max-width: 110em;
+  margin: 0 auto;
+}
 
 .first_row {
-  padding: 7em 21em;
-  display: flex;
+  margin: 7em 0;
   justify-content: space-between;
+  display: flex;
   position: relative;
+  gap: 5.5em;
 }
 .at {
   display: flex;
@@ -147,13 +155,13 @@ header nav ul li a {
   width: 6.4em;
   height: 6.4em;
   border-radius: 50%;
-  top: -1em;
+  bottom: -5em;
   right: 0;
   color: rgb(254, 134, 34);
   transition: all 0.2s;
 }
 .at p {
-  margin-bottom: 0.6em;
+  margin-bottom: 0.2em;
   font-size: 3rem;
   line-height: 100%;
 }
@@ -232,7 +240,7 @@ p {
 .second_row {
   display: flex;
   justify-content: space-between;
-  padding: 3em 21em;
+  max-width: 110em;
   align-items: center;
 }
 .second_row .card.left {
@@ -339,7 +347,7 @@ p {
 .lasr_row {
   background-color: rgb(242, 242, 242);
   height: 10.3rem;
-  padding: 3.2em 21em;
+  padding: 3.2em 0;
 }
 .top {
   display: flex;
@@ -357,11 +365,14 @@ p {
   font-size: 2rem;
 }
 .footer {
-  display: flex;
   background-color: rgb(49, 49, 49);
   height: 7.8rem;
+  align-content: center;
+}
+.footer .content {
+  display: flex;
   justify-content: space-between;
-  padding: 0 21em;
+  align-items: center;
 }
 .footer p {
   color: #f2f2f2;
