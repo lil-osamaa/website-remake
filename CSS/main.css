@@ -11,12 +11,17 @@ body {
   background: url(https://rami-gomaa.de/wp-content/uploads/2022/09/rami_gomaa_background-1.jpg);
 }
 header {
-  padding: 0.7em 0;
+  padding: 0.7em 1em;
   background-color: white;
   position: sticky;
   top: 0;
   z-index: 1000; /* Ensures the header stays above other content */
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
 }
 header .content {
   display: flex;
@@ -40,10 +45,17 @@ header nav ul li {
   content: "";
   right: -1.6em;
   background-color: black;
-  bottom: -0.2em;
+  top: 50%; /* Start from the vertical center */
+  transform: translateY(-50%);
   width: 0.5px;
   height: 120%;
 }
+.need:nth-child(5)::after {
+  height: 2.5em;
+  top: 50%; /* Start from the vertical center */
+  transform: translateY(-50%);
+}
+
 .border.ho {
   transition: all 0.3s;
 }
@@ -140,11 +152,19 @@ header nav ul li a {
 }
 
 .first_row {
-  margin: 7em 0;
-  justify-content: space-between;
+  margin: 7em auto;
+  justify-content: space-around;
+  padding: 0 3em;
   display: flex;
   position: relative;
   gap: 5.5em;
+  flex-wrap: wrap;
+}
+.first_row .card.left {
+  flex: 1 1;
+}
+.first_row .card.right {
+  flex: 1 1;
 }
 .at {
   display: flex;
@@ -167,7 +187,7 @@ header nav ul li a {
 }
 .card {
   width: 38em;
-  height: 54.8em;
+  /*height: 54.8em;*/
   padding: 3.2em;
   box-sizing: border-box;
   line-height: 1.8;
@@ -205,7 +225,7 @@ p {
   align-content: center;
 }
 .first_row .card.right {
-  justify-content: space-between;
+  justify-content: space-around;
 }
 .text a {
   text-decoration: none;
@@ -239,15 +259,21 @@ p {
 }
 .second_row {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 0 3em;
   max-width: 110em;
   align-items: center;
+  margin: 7em auto;
+  flex-wrap: wrap;
+  gap: 5.5em;
 }
 .second_row .card.left {
   display: block;
   width: 66.5em;
-  height: 30.8em;
+  min-width: 35.6em;
+  /*height: 30.8em;*/
   padding-top: 4.1em;
+  flex: 1 1 35.6em;
 }
 .second_row .card.left p {
   color: rgb(0, 131, 236);
@@ -265,10 +291,11 @@ p {
   line-height: normal;
 }
 .second_row .card.right {
-  width: 38em;
-  height: 30.1em;
+  max-width: 38em;
+  /*height: 30.1em;*/
   display: block;
   background-color: rgb(0, 131, 236);
+  flex: 1 1 38em;
 }
 
 .second_row .card.right h2 {
@@ -297,7 +324,7 @@ p {
   font-size: 2.4rem;
 }
 .third {
-  margin: 8em 0;
+  margin: 7em 0;
   position: relative;
   transition: all 0.3s;
   display: flex;
@@ -347,7 +374,7 @@ p {
 .lasr_row {
   background-color: rgb(242, 242, 242);
   height: 10.3rem;
-  padding: 3.2em 0;
+  padding: 3.2em 1em;
 }
 .top {
   display: flex;
@@ -368,6 +395,7 @@ p {
   background-color: rgb(49, 49, 49);
   height: 7.8rem;
   align-content: center;
+  padding: 0 1em;
 }
 .footer .content {
   display: flex;
@@ -387,6 +415,7 @@ p {
   list-style: none;
   margin: 0;
   gap: 2.5em;
+  padding: 0;
 }
 .footer nav ul li {
   display: flex;
@@ -464,4 +493,26 @@ p {
 }
 .footer nav ul li a:hover {
   color: rgb(254, 134, 34);
+}
+@media only screen and (max-width: 600px) {
+  .first_row .card.right {
+    flex-wrap: wrap;
+  }
+  .top {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .bottom {
+    justify-content: center;
+  }
+  .lasr_row,
+  .footer {
+    height: auto;
+  }
+  .footer .content {
+    padding: 1em;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+  }
 }
