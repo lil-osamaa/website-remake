@@ -3,7 +3,6 @@ html {
 }
 body {
   margin: 0;
-  overflow-x: hidden;
 }
 .wrapper {
   /*font-size: 1.7em;*/
@@ -21,7 +20,6 @@ header {
 .img-fluid {
   max-width: 100%;
   height: auto;
-  width: auto\9; /* ie8 */
 }
 header .content {
   display: flex;
@@ -40,7 +38,7 @@ header nav ul {
 header nav ul li {
   position: relative;
 }
-.need::after {
+.afterline::after {
   position: absolute;
   content: "";
   right: -1.6em;
@@ -50,16 +48,16 @@ header nav ul li {
   width: 0.5px;
   height: 120%;
 }
-.need:nth-child(5)::after {
+.afterline:nth-child(5)::after {
   height: 2.5em;
   top: 50%; /* Start from the vertical center */
   transform: translateY(-50%);
 }
 
-.border.ho {
+.underline {
   transition: all 0.3s;
 }
-.border.ho::before {
+.underline::before {
   content: "";
   position: absolute;
   bottom: -6px;
@@ -69,11 +67,11 @@ header nav ul li {
   background-color: rgb(254, 134, 34); /* Border color */
   transition: width 0.3s;
 }
-.border.active {
+.active {
   color: rgb(0, 131, 236);
 }
 
-.border.active::after {
+.active::after {
   position: absolute;
   content: "";
   left: -10%;
@@ -110,10 +108,11 @@ header nav ul li a {
   height: 55em;
   align-items: center;
   position: relative;
+  padding: 0 5em;
 }
 .parallax {
-  height: 100%; /* Full height */
-  background-image: url("https://rami-gomaa.de/wp-content/uploads/2021/09/rami-gomaa-banner-mainboard.jpg"); /* Replace with your image */
+  height: 100%;
+  background-image: url("https://rami-gomaa.de/wp-content/uploads/2021/09/rami-gomaa-banner-mainboard.jpg");
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -124,8 +123,8 @@ header nav ul li a {
   align-items: center;
   justify-content: center;
   padding: 3.2em;
-  width: 50.6em;
-  height: 14.4em;
+  /*width: 50.6em;*/
+  /*height: 14.4em;*/
   background-color: rgba(250, 250, 250, 0.8);
 
   position: relative;
@@ -154,17 +153,20 @@ header nav ul li a {
 .first_row {
   margin: 7em auto;
   justify-content: space-around;
-  padding: 0 3em;
+  padding: 0 5em;
   display: flex;
   position: relative;
   gap: 5.5em;
   flex-wrap: wrap;
+  align-items: center;
 }
 .first_row .card.left {
   flex: 1 1;
 }
 .first_row .card.right {
   flex: 1 1;
+  gap: 3em;
+  height: fit-content;
 }
 .at {
   display: flex;
@@ -176,7 +178,7 @@ header nav ul li a {
   height: 6.4em;
   border-radius: 50%;
   bottom: -5em;
-  right: 0;
+  right: 1em;
   color: rgb(254, 134, 34);
   transition: all 0.2s;
 }
@@ -220,10 +222,7 @@ p {
   display: flex;
   width: 66.5em;
 }
-.text {
-  width: 38.7em;
-  align-content: center;
-}
+
 .first_row .card.right {
   justify-content: space-around;
 }
@@ -233,6 +232,7 @@ p {
   font-family: "Roboto Slab";
   font-size: 2rem;
   position: relative;
+  white-space: nowrap;
 }
 .text a::after {
   content: "";
@@ -260,7 +260,7 @@ p {
 .second_row {
   display: flex;
   justify-content: space-around;
-  padding: 0 3em;
+  padding: 0 5em;
   max-width: 110em;
   align-items: center;
   margin: 7em auto;
@@ -443,10 +443,10 @@ p {
   margin: 0;
   align-items: center;
 }
-.border.ho:hover:before {
+.underline:hover:before {
   width: 100%;
 }
-.border.ho:hover {
+.underline:hover {
   color: rgb(254, 134, 34);
 }
 .card:hover {
@@ -494,7 +494,7 @@ p {
 .footer nav ul li a:hover {
   color: rgb(254, 134, 34);
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 700px) {
   .first_row .card.right {
     flex-wrap: wrap;
   }
@@ -514,5 +514,41 @@ p {
     flex-wrap: wrap;
     justify-content: center;
     gap: 2em;
+  }
+  *:hover {
+    box-shadow: none !important;
+    transform: none !important;
+  }
+  .underline:hover:before {
+    width: 0;
+  }
+  .card:hover:before {
+    height: 0;
+  }
+  .text a:hover:after {
+    height: 0;
+    background-color: rgb(0, 131, 236);
+  }
+  .text a:hover:before {
+    width: 0;
+    background-color: rgb(0, 131, 236);
+  }
+  .third a:hover:before {
+    height: 0;
+  }
+  .first_row,
+  .second_row {
+    padding: 0;
+  }
+  .first_row .card.right {
+    width: auto;
+  }
+  .h h1 {
+    font-size: 2.2rem;
+  }
+}
+@media only screen and (max-width: 1100px) {
+  header nav ul {
+    display: none;
   }
 }
