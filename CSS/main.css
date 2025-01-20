@@ -44,14 +44,14 @@ header nav ul li {
   content: "";
   right: -1.6em;
   background-color: black;
-  top: 50%; /* Start from the vertical center */
+  top: 50%;
   transform: translateY(-50%);
   width: 0.5px;
   height: 120%;
 }
 .afterline:nth-child(5)::after {
   height: 2.5em;
-  top: 50%; /* Start from the vertical center */
+  top: 50%;
   transform: translateY(-50%);
 }
 
@@ -63,9 +63,9 @@ header nav ul li {
   position: absolute;
   bottom: -6px;
   left: 0;
-  width: 0%; /* Remaining width */
-  height: 2px; /* Thickness of the border */
-  background-color: rgb(254, 134, 34); /* Border color */
+  width: 0%;
+  height: 2px;
+  background-color: rgb(254, 134, 34);
   transition: width 0.3s;
 }
 .active {
