@@ -25,6 +25,7 @@ header .content {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 10em;
 }
 
 header nav ul {
@@ -101,6 +102,26 @@ header nav ul li a {
   color: white;
   transition: all 0.3s;
 }
+#sidebar-active {
+  display: none;
+}
+.open-sidebar {
+  position: relative;
+  width: 40px;
+  height: 40px;
+}
+.open-sidebar svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.open-sidebar {
+  display: none;
+  width: fit-content;
+}
+.open-sidebar svg {
+  fill: rgb(254, 134, 34);
+}
 
 .home_page {
   display: flex;
@@ -153,7 +174,6 @@ header nav ul li a {
 .first_row {
   margin: 7em auto;
   justify-content: space-around;
-  padding: 0 5em;
   display: flex;
   position: relative;
   gap: 5.5em;
@@ -164,7 +184,7 @@ header nav ul li a {
   flex: 1 1;
 }
 .first_row .card.right {
-  flex: 1 1;
+  flex: 1 1 40em;
   gap: 3em;
   height: fit-content;
 }
@@ -232,7 +252,7 @@ p {
   font-family: "Roboto Slab";
   font-size: 2rem;
   position: relative;
-  white-space: nowrap;
+  display: inline-block;
 }
 .text a::after {
   content: "";
@@ -260,8 +280,7 @@ p {
 .second_row {
   display: flex;
   justify-content: space-around;
-  padding: 0 5em;
-  max-width: 110em;
+  /*max-width: 110em;*/
   align-items: center;
   margin: 7em auto;
   flex-wrap: wrap;
@@ -538,17 +557,53 @@ p {
   }
   .first_row,
   .second_row {
-    padding: 0;
+    padding: 0 !important;
   }
-  .first_row .card.right {
-    width: auto;
-  }
+
   .h h1 {
     font-size: 2.2rem;
   }
 }
 @media only screen and (max-width: 1100px) {
   header nav ul {
+    flex-direction: column;
+    gap: 2.2em;
+    align-items: start;
+  }
+  .first_row,
+  .second_row {
+    padding: 0 5em;
+  }
+  .sidebar-container {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 10em;
+    right: -100%;
+    padding: 2em 2em;
+    justify-content: center;
+    background-color: rgba(250, 250, 250, 0.8);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+  }
+
+  .afterline::after {
     display: none;
+  }
+
+  .open-sidebar {
+    display: block;
+  }
+  .open-sidebar svg:nth-of-type(2) {
+    display: none;
+  }
+  #sidebar-active:checked ~ .sidebar-container {
+    right: 1em;
+  }
+  #sidebar-active:checked ~ .open-sidebar svg:first-of-type {
+    display: none;
+  }
+  #sidebar-active:checked ~ .open-sidebar svg:nth-of-type(2) {
+    display: block;
   }
 }
