@@ -121,6 +121,7 @@ header nav ul li a {
 }
 .open-sidebar svg {
   fill: rgb(254, 134, 34);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .home_page {
@@ -535,9 +536,14 @@ p {
     gap: 2em;
   }
   *:hover {
-    box-shadow: none !important;
+    /* box-shadow: none !important;*/
     transform: none !important;
   }
+  .third a:hover,
+  .card:hover {
+    box-shadow: none;
+  }
+
   .underline:hover:before {
     width: 0;
   }
@@ -595,15 +601,18 @@ p {
     display: block;
   }
   .open-sidebar svg:nth-of-type(2) {
-    display: none;
+    opacity: 0;
+    transform: scale(0.8);
   }
   #sidebar-active:checked ~ .sidebar-container {
     right: 1em;
   }
   #sidebar-active:checked ~ .open-sidebar svg:first-of-type {
-    display: none;
+    opacity: 0;
+    transform: scale(0.8);
   }
   #sidebar-active:checked ~ .open-sidebar svg:nth-of-type(2) {
-    display: block;
+    opacity: 1;
+    transform: scale(1);
   }
 }
